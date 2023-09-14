@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqVTJNa1U1UXpjeE0wVXlSRUUwUmtFNFJrWkdNVVExTlRReU56bEVNVE5HUWpRNU1FTkZRUSJ9.eyJpc3MiOiJodHRwczovL2lkLXN0YWdpbmcucHJvYWdyaWNhLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTFjNzMwY2YzZTE3MTBlOGE4MGI4NDYiLCJhdWQiOlsiaHR0cHM6Ly9hZ2lsaXR5LnByb2FncmljYS5jb20vYXBpLyIsImh0dHBzOi8vcHJvYWdyaWNhLXN0YWdpbmcuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY3MTEwOTE2NCwiZXhwIjoxNjcxMTk1NTY0LCJhenAiOiJwcWJ6Mk1vREtOS2dyOTY1cHB5bUpLSWRkdlN5eGRVWCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.o9yvCibSSMh-vS6arEqzFZCam23-rQjlxJpoyJBl9UFjKFN1_3hJRc3coBcYBCOuZJ0lGiip2qPw1VDV7wNSBQG91P3A1UMqXCgMfM0XZ7eEuqlBFhpn6s1eWQ13p1rbo-mK_DOwxPM5fYKKGUJD4hNmr1jJOAHKo1mfcn14Q81MskW2mwFgMISSr-TzCwmgJPxYYGsILrNCqfDrcLrVF1yGG_orje1nJHuCxC6QgRk0P0t_0RPXd-hbV2_kQEpsEEFBNR9PlP8Ez3XKKf8mqsOu5nt2JYglNCzrfuMU6VPiIUJCy_TOwEZAhRNoV2us_bJeEYDtDrhySlP9NKQ-IA</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="49586">200</stringProp>
+          </collectionProp>
+          <stringProp name="Assertion.custom_message"></stringProp>
+          <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">16</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PMT_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;product&quot;: [&#xd;
+        &quot;ENDIGO ZC 4X1 - 217148&quot;&#xd;
+    ],&#xd;
+    &quot;customer&quot;: [&#xd;
+        &quot;MARK GEIGER - 011155&quot;&#xd;
+    ],&#xd;
+    &quot;location&quot;: [&#xd;
+        &quot;067 - SANDOVAL CROPS - SOUTH CENTRAL FS&quot;&#xd;
+    ],&#xd;
+    &quot;salesperson&quot;: [&#xd;
+        &quot;MATT MORTON - 0527&quot;&#xd;
+    ],&#xd;
+    &quot;fiscalYearChoice&quot;: &quot;growmarkFiscalYear&quot;,&#xd;
+    &quot;productHierarchy&quot;: [&#xd;
+        {&#xd;
+            &quot;key&quot;: &quot;productDivision_Agronomy&quot;,&#xd;
+            &quot;type&quot;: &quot;productDivision&quot;,&#xd;
+            &quot;value&quot;: &quot;Agronomy&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;growmarkFiscalYear&quot;: &quot;currentFiscalYear&quot;,&#xd;
+    &quot;view&quot;: &quot;count&quot;,&#xd;
+    &quot;measure&quot;: &quot;dollarvalue&quot;,&#xd;
+    &quot;timeInterval&quot;: &quot;quarter&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/productMovementDetailsChart</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSO_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;location&quot;:[&quot;025 - Winterset Highway 92 Fast Stop&quot;,&quot;030 - AGRILAND FS - Clarinda 30&quot;],&quot;salesperson&quot;:[&quot;Winterset F24 Winterset F24 - 0053&quot;,&quot;Feed Mill - 0062&quot;,&quot;Clarinda  Feed &amp; Grain - 0227&quot;,&quot;non designated salesman - 0000&quot;,&quot;Winterset Petroleum - 0055&quot;,&quot;Albia Stop &amp; Shop - 0036&quot;,&quot;Indianola F24 - 0057&quot;],&quot;memberCompany&quot;:&quot;AGRILAND FS, INC.&quot;,&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;groupBy&quot;:&quot;customerID&quot;,&quot;from&quot;:0,&quot;to&quot;:10}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/crossSelling</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InvByDim_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;location&quot;:[&quot;048 - Prairieland FS Inc. - Mt. Sterling Fast Stop&quot;,&quot;071 - GENERAL STORE EFFINGHAM&quot;,&quot;135 - Farmtown Fiscal&quot;,&quot;032 - Carlinville Fast Stop&quot;,&quot;124 - Waterloo FAST STOP&quot;,&quot;130 - UPI Energy FS - SHARED SERVICES&quot;],&quot;productHierarchy&quot;:[{&quot;key&quot;:&quot;productDivision_Agronomy&quot;,&quot;value&quot;:&quot;Agronomy&quot;,&quot;type&quot;:&quot;productDivision&quot;},{&quot;key&quot;:&quot;productDivision_Energy&quot;,&quot;value&quot;:&quot;Energy&quot;,&quot;type&quot;:&quot;productDivision&quot;}],&quot;memberCompany&quot;:[&quot;M &amp; M SERVICE COMPANY&quot;,&quot;PRAIRIELAND FS, INC.&quot;],&quot;salesperson&quot;:[&quot;Fast Stop - Carlinville - 0032&quot;,&quot;Mt Sterling Fuel 24 - 0046&quot;,&quot;Main Office - 0060&quot;],&quot;customer&quot;:[&quot;DEBIT CARD - 000868&quot;,&quot;VISA CREDIT CARD - 000381&quot;,&quot;MT STERLING VISA/MC - MASAM&quot;],&quot;view&quot;:&quot;count&quot;,&quot;groupBy&quot;:&quot;memberCompany&quot;,&quot;measure&quot;:&quot;dollarvalue&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/totalInvoices</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="env" elementType="Argument">
+              <stringProp name="Argument.name">env</stringProp>
+              <stringProp name="Argument.value">agility-pre-eks-04-us.agv.us-east-1.dsg.lnrsg.io</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="prod" elementType="Argument">
+              <stringProp name="Argument.name">prod</stringProp>
+              <stringProp name="Argument.value">agility-prod-eks-04-us.agv.us-east-1.dsg.lnrsg.io</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="agtprod" elementType="Argument">
+              <stringProp name="Argument.name">agtprod</stringProp>
+              <stringProp name="Argument.value">us.agility.proagrica.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${prod}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="BookingsByDim_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;bookingStatus&quot;:[&quot;Unpaid&quot;],&quot;genericPrepay&quot;:[&quot;Not Generic Prepay&quot;],&quot;deletedBookings&quot;:[&quot;Active&quot;],&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;fiscalYearDateRangeChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;salesperson&quot;:[&quot;Todd Wibben - 0072&quot;,&quot;Unknown&quot;,&quot;Designated Non - 0000&quot;,&quot;ZACH COLLINS - 0025&quot;,&quot;Jed Boehler - 0072&quot;,&quot;Bill Smith - 0055&quot;],&quot;location&quot;:[&quot;035 - Ag View FS, Inc. - Lamoille Plant&quot;,&quot;072 - Evergreen FS - Maroa Crops&quot;,&quot;042 - Piatt County Service Co - Mansfield&quot;,&quot;120 - wEBS MASTER - FS PARTNERS&quot;],&quot;view&quot;:&quot;count&quot;,&quot;groupBy&quot;:&quot;memberCompany&quot;,&quot;measure&quot;:&quot;dollarvalue&quot;,&quot;bookingFilter&quot;:&quot;original&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/financialsBookingsByPC</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TotalBookings_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearDateRangeChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;measure&quot;:&quot;dollarvalue&quot;,&quot;bookingFilter&quot;:&quot;original&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/financialsBookingsHeadline</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TotalInvoices_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;productHierarchy&quot;:[{&quot;key&quot;:&quot;productDivision_Agronomy&quot;,&quot;value&quot;:&quot;Agronomy&quot;,&quot;type&quot;:&quot;productDivision&quot;},{&quot;key&quot;:&quot;productDivision_Energy&quot;,&quot;value&quot;:&quot;Energy&quot;,&quot;type&quot;:&quot;productDivision&quot;}],&quot;location&quot;:[&quot;032 - Carlinville Fast Stop&quot;,&quot;048 - Prairieland FS Inc. - Mt. Sterling Fast Stop&quot;,&quot;071 - GENERAL STORE EFFINGHAM&quot;,&quot;124 - Waterloo FAST STOP&quot;],&quot;salesperson&quot;:[&quot;Mt Sterling Fuel 24 - 0046&quot;,&quot;Fast Stop - Carlinville - 0032&quot;,&quot;EFFINGHAM GENERAL STORE - 0071&quot;,&quot;Fast Stop Waterloo - 0124&quot;,&quot;Use Company - 0001&quot;],&quot;customer&quot;:[&quot;DEBIT CARD - 000868&quot;,&quot;VISA CREDIT CARD - 000381&quot;,&quot;MT STERLING VISA/MC - MASAM&quot;,&quot;DEBIT CARD - 023113&quot;],&quot;measure&quot;:&quot;dollarvalue&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/totalInvoicesHeadline</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PMTDetails_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;memberCompany&quot;:[&quot;AGRILAND FS, INC.&quot;,&quot;SOUTH CENTRAL FS, INC.&quot;],&quot;groupBy&quot;:&quot;memberCompany&quot;,&quot;measure&quot;:&quot;dollarvalue&quot;,&quot;page&quot;:0,&quot;columns&quot;:[&quot;docNumber&quot;,&quot;docType&quot;,&quot;quantityGal&quot;,&quot;quantityLitre&quot;,&quot;quantityUsTon&quot;,&quot;quantityMetricTon&quot;,&quot;quantityLb&quot;,&quot;quantityKg&quot;,&quot;quantityAcre&quot;,&quot;quantityUnit&quot;,&quot;valueExclTax&quot;,&quot;taxAmount&quot;,&quot;stage&quot;,&quot;stageDate&quot;,&quot;productID&quot;,&quot;productName&quot;,&quot;productClassification&quot;,&quot;productLine&quot;,&quot;productDivision&quot;,&quot;productDepartment&quot;,&quot;memberCompany&quot;,&quot;location&quot;,&quot;customerID&quot;,&quot;customerXref&quot;,&quot;customerName&quot;,&quot;customerClassification&quot;,&quot;growerID&quot;,&quot;growerXref&quot;,&quot;growerName&quot;,&quot;growerClassification&quot;,&quot;unloaded&quot;,&quot;loaded&quot;,&quot;invoiced&quot;,&quot;invoicedOnly&quot;,&quot;fiscalYear&quot;,&quot;salespersonName&quot;,&quot;salespersonID&quot;,&quot;techLicense&quot;],&quot;sortType&quot;:&quot;asc&quot;,&quot;sortField&quot;:&quot;productName&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">api/data/productMovementDetailsTable</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LoadToInvoice_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;location&quot;:[&quot;048 - Prairieland FS Inc. - Mt. Sterling Fast Stop&quot;],&quot;view&quot;:&quot;count&quot;,&quot;groupBy&quot;:&quot;location&quot;,&quot;measure&quot;:&quot;dollarvalue&quot;,&quot;timeInterval&quot;:&quot;week&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">api/data/invoiceTimelapse</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OverdueSalesperson_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;productHierarchy&quot;:[{&quot;key&quot;:&quot;productLine_Agronomy Misc&quot;,&quot;value&quot;:&quot;Agronomy Misc&quot;,&quot;type&quot;:&quot;productLine&quot;},{&quot;key&quot;:&quot;productLine_Crop Protection&quot;,&quot;value&quot;:&quot;Crop Protection&quot;,&quot;type&quot;:&quot;productLine&quot;}],&quot;memberCompany&quot;:[&quot;PRAIRIELAND FS, INC.&quot;],&quot;timeframe&quot;:30,&quot;salesperson&quot;:&quot;Kinderhook Sales - 0056&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/overdueInvoicesBySalesperson/table</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OverdueSalespersonDrawer_TEST" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;productHierarchy&quot;:[{&quot;key&quot;:&quot;productLine_Agronomy Misc&quot;,&quot;value&quot;:&quot;Agronomy Misc&quot;,&quot;type&quot;:&quot;productLine&quot;},{&quot;key&quot;:&quot;productLine_Crop Protection&quot;,&quot;value&quot;:&quot;Crop Protection&quot;,&quot;type&quot;:&quot;productLine&quot;}],&quot;memberCompany&quot;:[&quot;PRAIRIELAND FS, INC.&quot;],&quot;location&quot;:[&quot;087 - Prairieland FS Inc. - Fulton FS&quot;],&quot;timeframe&quot;:30,&quot;page&quot;:0,&quot;columns&quot;:[&quot;memberCompany&quot;,&quot;location&quot;,&quot;invoiceNumber&quot;,&quot;invoicedDate&quot;,&quot;dueDate&quot;,&quot;salespersonName&quot;,&quot;salespersonID&quot;,&quot;productName&quot;,&quot;productID&quot;,&quot;productClassification&quot;,&quot;productLine&quot;,&quot;productDivision&quot;,&quot;productDepartment&quot;,&quot;valueExclTax&quot;,&quot;taxAmount&quot;,&quot;amountPaid&quot;,&quot;customerID&quot;,&quot;customerXref&quot;,&quot;customerName&quot;],&quot;sortField&quot;:&quot;customerID&quot;,&quot;sortType&quot;:&quot;asc&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/drawer/overdueInvoicesBySalesperson</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PM-Stages" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;productHierarchy&quot;:[{&quot;key&quot;:&quot;productDivision_Agronomy&quot;,&quot;value&quot;:&quot;Agronomy&quot;,&quot;type&quot;:&quot;productDivision&quot;},{&quot;key&quot;:&quot;productDivision_Energy&quot;,&quot;value&quot;:&quot;Energy&quot;,&quot;type&quot;:&quot;productDivision&quot;}],&quot;location&quot;:[&quot;048 - Prairieland FS Inc. - Mt. Sterling Fast Stop&quot;,&quot;071 - GENERAL STORE EFFINGHAM&quot;,&quot;124 - Waterloo FAST STOP&quot;,&quot;032 - Carlinville Fast Stop&quot;],&quot;measure&quot;:&quot;dollarvalue&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/productMovementStages</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSO-Req2" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;location&quot;:[&quot;025 - Winterset Highway 92 Fast Stop&quot;,&quot;030 - AGRILAND FS - Clarinda 30&quot;],&quot;salesperson&quot;:[&quot;Winterset F24 Winterset F24 - 0053&quot;,&quot;Feed Mill - 0062&quot;,&quot;Clarinda  Feed &amp; Grain - 0227&quot;,&quot;non designated salesman - 0000&quot;,&quot;Winterset Petroleum - 0055&quot;,&quot;Albia Stop &amp; Shop - 0036&quot;,&quot;Indianola F24 - 0057&quot;],&quot;memberCompany&quot;:&quot;AGRILAND FS, INC.&quot;,&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;groupBy&quot;:&quot;customerID&quot;,&quot;from&quot;:0,&quot;to&quot;:10}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/crossSelling</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSO-Req3" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;location&quot;:[&quot;099 - AGRILAND FS, Inc.&quot;,&quot;063 - Harlan Fast Stop&quot;,&quot;031 - Clarinda Fast Stop&quot;,&quot;025 - Winterset Highway 92 Fast Stop&quot;,&quot;364 - Chris Pruitt&quot;],&quot;salesperson&quot;:[&quot;Winterset F24 Winterset F24 - 0053&quot;,&quot;Clarinda Fast Stop - 0229&quot;,&quot;Winterset Petroleum - 0055&quot;,&quot;non designated salesman - 0000&quot;],&quot;memberCompany&quot;:&quot;AGRILAND FS, INC.&quot;,&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;groupBy&quot;:&quot;customerID&quot;,&quot;from&quot;:0,&quot;to&quot;:10}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/crossSelling</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSP-Req4" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;fiscalYearChoice&quot;:&quot;growmarkFiscalYear&quot;,&quot;growmarkFiscalYear&quot;:&quot;currentFiscalYear&quot;,&quot;memberCompany&quot;:&quot;AGRILAND FS, INC.&quot;,&quot;productHierarchy&quot;:[{&quot;key&quot;:&quot;productDivision_Agronomy&quot;,&quot;value&quot;:&quot;Agronomy&quot;,&quot;type&quot;:&quot;productDivision&quot;},{&quot;key&quot;:&quot;productDivision_Energy&quot;,&quot;value&quot;:&quot;Energy&quot;,&quot;type&quot;:&quot;productDivision&quot;}],&quot;product&quot;:[&quot;F24 Diesel Clear - 031424&quot;,&quot;Energy Freight Surcharge - 999699&quot;,&quot;F24-Unleaded W/Ethanol - 030924&quot;],&quot;location&quot;:[&quot;063 - Harlan Fast Stop&quot;,&quot;031 - Clarinda Fast Stop&quot;,&quot;052 - AGRILAND FS - Washington&quot;,&quot;025 - Winterset Highway 92 Fast Stop&quot;],&quot;salesperson&quot;:[&quot;Winterset F24 Winterset F24 - 0053&quot;,&quot;Harlan Fast Stop - 0011&quot;,&quot;Washington F24 - 0031&quot;,&quot;Clarinda Fast Stop - 0229&quot;,&quot;Jerod Mathiasen - 0001&quot;],&quot;groupBy&quot;:&quot;customerID&quot;,&quot;from&quot;:0,&quot;to&quot;:10}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/data/crossSelling</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
